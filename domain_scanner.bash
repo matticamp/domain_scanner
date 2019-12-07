@@ -5,11 +5,11 @@
  #This Bash script reads a domain from the user, it runs nslookup, dig, whois and host 
 #commands and also attempts a zone transfer on the supplied IP through dnsrecon and fierce.
 
-	echo -n "Please enter a domain to check:  ";
+echo -n "Please enter a domain to check:  ";
 
 read domain
 
-# Ask user to indicate four output files, one for each command to be run
+# Ask user to indicate a series of output files, one for each command to be run
 
 echo -n "Output file 1 -nslookup: "
 read output1
@@ -54,6 +54,7 @@ echo "Output of the dnsrecon command with zone transfer run on ${domain} perform
 
 
 echo "Output of the fierce command run on ${domain} performed by ${name} on ${today}" >> "$output7"
+
 nslookup $domain >> $output1 &
 
 
