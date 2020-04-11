@@ -3,7 +3,7 @@
 # Domain recon script created by Mattia Campagnano on Fri Dec 6 14:17:49 EST 2019
 
  #This Bash script reads a domain from the user, it runs nslookup, dig, whois and host 
-#commands and also attempts a zone transfer on the supplied IP through dnsrecon and fierce.
+#commands and also attempts a zone transfer on the supplied domain through dnsrecon and fierce.
 
 echo -n "Please enter a domain to check:  ";
 
