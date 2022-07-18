@@ -11,26 +11,20 @@ read domain
 
 # Ask user to indicate a series of output files, one for each command to be run
 
-echo -n "Output file 1 -nslookup: "
-read output1
+output1 = "nslookup.txt"
 
-echo -n "Output file 2 -dig: "
-read output2
+output2 = "dig.txt"
 
-echo -n "Output file 3 - whois: "
-read output3
+output3  = "whois.txt"
 
-echo -n "Output file 4 -host: "
-read output4
 
-echo -n "Ouput file 5 - dnsrecon -d: "
-read output5
+output4 = "host.txt"
 
-echo -n "Output file 6 - dnsrecon -d -t: "
-read output6
+output5 = "dnsrecon.txt"
 
-echo -n " Output file 7 - fierce: "
-read output7
+output6 = "dnsrecon1.txt"
+
+output7 = "fierce.txt"
 
 echo 
 
@@ -73,6 +67,6 @@ dnsrecon -d $domain >> $output5 &
 dnsrecon -d $domain -t axfr >> $output6 &
 
 
-fierce -dns $domain >> $output7 &
+fierce -domain $domain >> $output7 &
 
 echo "All commands successfully performed. Exiting..."
