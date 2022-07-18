@@ -51,6 +51,6 @@ dnsrecon -d $domain >> dnsrecon.txt &
 dnsrecon -d $domain -t axfr >> dnsrecon1.txt &
 
 
-fierce -domain $domain >> fierce.txt &
+fierce --domain $domain >> fierce.txt &
 
 echo "All commands successfully performed. Exiting..."
