@@ -11,46 +11,46 @@ read domain
 
 # Ask user to indicate a series of output files, one for each command to be run
 
-
+company = $1
 echo -n "Enter pentester name: "
 
 read name
 
 today=$(date)
 
-echo "Output of the nslookup command run on ${domain} performed by ${name} on ${today}" >> nslookup.txt
+echo "Output of the nslookup command run on ${domain} performed by ${name} on ${today}" >> $company-nslookup.txt
 
-echo "Output of the dig command run on ${domain} performed by ${name} on ${today}" >> dig.txt
+echo "Output of the dig command run on ${domain} performed by ${name} on ${today}" >> $company-dig.txt
 
-echo "Output of the whois command run on ${domain} performed by ${name} on ${today}" >> whois.txt
+echo "Output of the whois command run on ${domain} performed by ${name} on ${today}" >> $company-whois.txt
 
-echo "Output of the host command run on ${domain} performed by ${name} on ${today}" >> host.txt
+echo "Output of the host command run on ${domain} performed by ${name} on ${today}" >> $company-host.txt
 
-echo "Output of the dnsrecon command run on ${domain} performed by ${name} on ${today}" >> dnsrecon.txt
+echo "Output of the dnsrecon command run on ${domain} performed by ${name} on ${today}" >> $company-dnsrecon.txt
  
-echo "Output of the dnsrecon command with zone transfer run on ${domain} performed by ${name} on ${today}" >> dnsrecon1.txt
+echo "Output of the dnsrecon command with zone transfer run on ${domain} performed by ${name} on ${today}" >> $company-dnsrecon1.txt
 
 
-echo "Output of the fierce command run on ${domain} performed by ${name} on ${today}" >> fierce.txt
+echo "Output of the fierce command run on ${domain} performed by ${name} on ${today}" >> $company-fierce.txt
 
 nslookup $domain >> nslookup.txt &
 
 
-dig $domain >> dig.txt &
+dig $domain >> $company-dig.txt &
 
 
-whois $domain >> whois.txt &
+whois $domain >> $company-whois.txt &
 
 
-host $domain >> host.txt &
+host $domain >> $company-host.txt &
 
 
-dnsrecon -d $domain >> dnsrecon.txt &
+dnsrecon -d $domain >> $company-dnsrecon.txt &
 
 
-dnsrecon -d $domain -t axfr >> dnsrecon1.txt &
+dnsrecon -d $domain -t axfr >> $company-dnsrecon1.txt &
 
 
-fierce --domain $domain >> fierce.txt &
+fierce --domain $domain >> $company-fierce.txt &
 
 echo "All commands successfully performed. Exiting..."
