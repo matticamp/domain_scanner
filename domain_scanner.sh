@@ -11,7 +11,7 @@ read domain
 
 # Ask user to indicate a series of output files, one for each command to be run
 
-company = $1
+echo $1
 echo -n "Enter pentester name: "
 
 read name
