@@ -76,4 +76,4 @@ dnsrecon -d $domain -t axfr >> $output6 &
 
 amass enum -d $domain >> $output7 &
 
-echo "All commands successfully performed. Exiting...
+echo "All commands successfully performed. Exiting..."
